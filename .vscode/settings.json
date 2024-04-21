@@ -1,0 +1,28 @@
+{
+  // Navigation
+  // ==========
+
+  // By default, we only show files that are commonly changed / core to the
+  // project. Toogle them via the eye icon in the bottom right of VS Code.
+  "files.exclude": {
+    "**/.*": true,
+    "**/*.lock": true,
+    "target/": true,
+    "dprint.json": true,
+    "rust-toolchain.toml": true
+  },
+
+  // Formatting
+  // ==========
+
+  // Let dprint do all the formatting
+  "editor.defaultFormatter": "dprint.dprint",
+  "editor.formatOnSave": true,
+
+  // But also try to match its settings so that we don't get jarring jumps from
+  // VS Code's default settings
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true
+}
