@@ -7,9 +7,10 @@
   "files.exclude": {
     "**/.*": true,
     "**/*.lock": true,
-    "target/": true,
+    "**/target/": true,
     "dprint.json": true,
-    "rust-toolchain.toml": true
+    "rust-toolchain.toml": true,
+    "Taskfile*.yml": true
   },
 
   // Formatting
@@ -24,5 +25,12 @@
   "editor.tabSize": 2,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+
+  // TOML
+  // ====
+
+  "evenBetterToml.schema.associations": {
+    "^.*(/|\\\\)Cargo\\.toml$": "https://json.schemastore.org/cargo.json"
+  }
 }

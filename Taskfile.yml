@@ -1,0 +1,16 @@
+version: "3"
+
+interval: 50ms
+
+tasks:
+  example:bevy:
+    dir: "examples/bevy"
+    watch: true
+    cmds:
+      - cargo run
+    sources:
+      - Cargo.toml
+      - src/**/*
+    generates:
+      - target/debug/bevy
+    method: none

@@ -1,0 +1,9 @@
+[package]
+name = "dungen-example-bevy"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.13"
+dungen = { path = "../.." }
+rand = "0.8.5"
