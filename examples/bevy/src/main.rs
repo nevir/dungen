@@ -1,4 +1,5 @@
 use bevy::{prelude::*, sprite::{MaterialMesh2dBundle, Mesh2dHandle}};
+use bevy_framepace::{FramepacePlugin, FramepaceSettings, Limiter};
 
 struct HexCell {
   q: i16,
@@ -19,6 +20,7 @@ struct Level {
 fn main() {
   App::new()
       .add_plugins(DefaultPlugins)
+      .add_plugins(FramepacePlugin)
       .add_systems(Startup, setup)
       .add_systems(Update, render_grid)
       .run();
@@ -43,7 +45,11 @@ fn generate_grid() -> HexGrid {
 
 fn setup(
   mut commands: Commands,
+  mut framepace_settings: ResMut<FramepaceSettings>,
 ) {
+  // Because https://github.com/bevyengine/bevy/issues/10261
+  framepace_settings.limiter = Limiter::from_framerate(5.0);
+
   commands.spawn(Camera2dBundle::default());
   commands.spawn(Level { grid: generate_grid() });
 }
